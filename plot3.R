@@ -1,3 +1,10 @@
+# Create the dir using that name
+if(!file.exists("data")) {
+    dir.create("data")
+}    
+# Unzip the file into the dir
+unzip("exdata-data-household_power_consumption.zip", exdir="data")
+
 ## first read the header info only
 header <- read.table("data//household_power_consumption.txt", nrows = 1, 
                      header = FALSE, sep =';', stringsAsFactors = FALSE)
@@ -24,8 +31,6 @@ legend("topright", lty=1, cex = 0.7, col = c("black","red", "blue"),
        legend = c("Sub_metering_1", 
                   "Sub_metering_2",
                   "Sub_metering_3"))
-
-
 
 
 ## Don't forget to close the PNG device!

@@ -1,3 +1,10 @@
+# Create the dir using that name
+if(!file.exists("data")) {
+    dir.create("data")
+}    
+# Unzip the file into the dir
+unzip("exdata-data-household_power_consumption.zip", exdir="data")
+
 
 ## Read the full data
 all_data <- read.table("data//household_power_consumption.txt",
