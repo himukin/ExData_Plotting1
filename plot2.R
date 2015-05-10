@@ -17,12 +17,18 @@ colnames( subset_data ) <- unlist(header)
 ## Create new column 'datetime' with the exisiting columns 'Date' & 'Time'
 subset_data$datetime <- strptime(paste(subset_data$Date,subset_data$Time),
                                  format="%d/%m/%Y %H:%M:%S")
+## start plotting in a PNG grDevice
+png("plot2.png",width     = 3.25,
+    height    = 3.25,
+    units     = "in",
+    res       = 1200,
+    pointsize = 4
+)
+
 
 plot(subset_data$datetime, subset_data$Global_active_power,
      ylab="Global Active Power (kilowatts)",xlab="", type="n")
 lines(subset_data$datetime, subset_data$Global_active_power)
 
-## Copy my plot to a PNG file
-dev.copy(png, file = "plot2.png")
 ## Don't forget to close the PNG device!
 dev.off()

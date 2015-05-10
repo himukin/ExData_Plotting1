@@ -18,7 +18,12 @@ colnames( subset_data ) <- unlist(header)
 subset_data$datetime <- strptime(paste(subset_data$Date,subset_data$Time),
                                  format="%d/%m/%Y %H:%M:%S")
 ## start plotting in a PNG grDevice
-png("plot3.png")
+png("plot3.png",width     = 3.25,
+    height    = 3.25,
+    units     = "in",
+    res       = 1200,
+    pointsize = 4
+)
 
 
 plot(subset_data$datetime, subset_data$Sub_metering_1,
