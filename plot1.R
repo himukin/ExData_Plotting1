@@ -21,12 +21,7 @@ subset_data$datetime <- strptime(paste(subset_data$Date,subset_data$Time),
 
 
 ## start plotting in a PNG grDevice
-png("plot1.png",width     = 3.25,
-    height    = 3.25,
-    units     = "in",
-    res       = 1200,
-    pointsize = 4
-)
+png("plot1.png",width = 480, height = 480)
 
 
 hist(subset_data$Global_active_power,xlab="Global Active Power (kilowatts)",

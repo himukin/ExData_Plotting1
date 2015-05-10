@@ -19,12 +19,14 @@ subset_data$datetime <- strptime(paste(subset_data$Date,subset_data$Time),
                                  format="%d/%m/%Y %H:%M:%S")
 
 ## start plotting in a PNG grDevice
-png("plot4.png",width     = 3.25,
-    height    = 3.25,
-    units     = "in",
-    res       = 1200,
-    pointsize = 4
-)
+# png("plot4.png",width     = 3.25,
+#     height    = 3.25,
+#     units     = "in",
+#     res       = 1200,
+#     pointsize = 4
+# )
+png("plot4.png",width = 480, height = 480)
+
 
 par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
 
